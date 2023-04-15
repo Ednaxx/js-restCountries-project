@@ -23,12 +23,12 @@ async function loadDB(endpoint) {
 }
 
 
-
 // renders search on screen
 
 
 function renderCountry(country) {
     const countryFrame = document.createElement('div')
+    countryFrame.classList.add('country-card')
     countryFrame.id = `#${country.cca3}`
 
     countryFrame.dataset.countryName = country.name.common
@@ -64,7 +64,7 @@ function renderCountry(country) {
     countryFrame.addEventListener('click', ev => showCountryWindow(ev))
 }
 
-// show country window
+// show country pop-up-window
 
 function showCountryWindow(ev) {
 
@@ -79,7 +79,28 @@ function showCountryWindow(ev) {
     document.getElementById('currencies').innerText = ev.currentTarget.dataset.currencies
     document.getElementById('google-maps-link').innerText = ev.currentTarget.dataset.googleMaps
     document.getElementById('google-maps-link').href = ev.currentTarget.dataset.googleMaps
+
+    document.getElementById('pop-up-window').classList.remove('hidden')
+    document.getElementById('pop-up-window').classList.add('visible')
 }
+
+// click outside to close
+
+document.getElementById('pop-up-window').addEventListener('click', ev => {
+    const frame = document.getElementById('pop-up-frame')
+
+    if (!frame.contains(ev.target)) {
+        try {
+            document.getElementById('pop-up-window').classList.remove('visible')
+            document.getElementById('pop-up-window').classList.add('hidden')
+        }
+        catch {
+
+        }
+    }
+})
+
+
 
 
 
@@ -92,7 +113,7 @@ document.querySelector('#submit').addEventListener('click', () => {
             errorMes.id = "errorMes"
             errorMes.innerText = "Please fill the input."
             errorMes.style.color = 'red'
-            document.getElementById('search-box').appendChild(errorMes)
+            document.getElementById('nav-bar').appendChild(errorMes)
         }    
     }
     else {
@@ -113,6 +134,10 @@ document.querySelector('#submit').addEventListener('click', () => {
 document.querySelector('#restart').addEventListener('click', () => {
     document.getElementById('countries-box').innerText = ""
     document.getElementById('search-input').value = ""
+
+    if (document.querySelector('#errorMes')) {
+        document.querySelector('#errorMes').remove()
+    }
 
     loadDB('https://restcountries.com/v3.1/all')
 })

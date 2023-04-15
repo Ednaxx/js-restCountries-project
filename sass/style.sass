@@ -1,0 +1,69 @@
+@use 'variables'
+@use 'pop-up-window'
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    background-color: variables.$primary-color
+    font: 100% Helvetica, sans-serif
+
+#nav-bar
+    background-color: variables.$terciary-color
+    height: 5vh
+    display: flex
+    align-items: center
+    padding-left: 20px
+
+    input
+        font-size: variables.$medium-font
+        border: solid 1px
+        border-radius: 5px
+        width: auto
+        height: auto
+
+#submit
+    width: 20px
+
+#restart
+    width: 20px
+
+#countries-box
+    margin: 20px
+    min-height: 80vh
+    border-radius: 20px
+    padding: 10px
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    gap: 10px
+
+.country-card
+    height: 30vh
+    width: 20vw
+    padding: 10px
+    background-color: variables.$secondary-color
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+
+    &:hover
+        cursor: pointer
+        border-left: 7px solid variables.$terciary-color
+        border-bottom: 7px solid variables.$terciary-color
+        border-radius: 10px
+        transition: 0.2s
+
+    img
+        border-radius: 10px
+        max-height: 70%
+
+    p
+        font-size: variables.$medium-font
+
