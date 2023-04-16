@@ -31,6 +31,8 @@ function renderCountry(country) {
     countryFrame.classList.add('country-card')
     countryFrame.id = `#${country.cca3}`
 
+    // store each country data
+
     countryFrame.dataset.countryName = country.name.common
     countryFrame.dataset.officialName = country.name.official
     countryFrame.dataset.countryFlag = country.flags.png
@@ -68,13 +70,12 @@ function renderCountry(country) {
 
 function showCountryWindow(ev) {
 
-    document.getElementById('country-name').innerText = ev.currentTarget.dataset.countryName
     document.getElementById('country-flag').src = ev.currentTarget.dataset.countryFlag
     document.getElementById('official-name').innerText = ev.currentTarget.dataset.officialName
     document.getElementById('region').innerText = ev.currentTarget.dataset.region
     document.getElementById('subregion').innerText = ev.currentTarget.dataset.subregion
     document.getElementById('languages').innerText = ev.currentTarget.dataset.languages
-    document.getElementById('area').innerText = ev.currentTarget.dataset.area
+    document.getElementById('area').innerHTML = ev.currentTarget.dataset.area + " km<sup>2</sup>"
     document.getElementById('population').innerText = ev.currentTarget.dataset.population
     document.getElementById('currencies').innerText = ev.currentTarget.dataset.currencies
     document.getElementById('google-maps-link').innerText = ev.currentTarget.dataset.googleMaps

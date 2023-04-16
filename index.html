@@ -11,39 +11,67 @@
 <body>
     <div id="pop-up-window" class="hidden">
         <div id="pop-up-frame">
-            <p id="country-name"></p>
             <img id="country-flag">
-    
-            <p>Official Name: </p>
-            <p id="official-name"></p>
-    
-            <p>Region: </p>
-            <p id="region"></p>
-    
-            <p>Subregion: </p>
-            <p id="subregion"></p>
-    
-            <p>Languages Spoken: </p>
-            <p id="languages"></p>
-    
-            <p>Country Area: </p>
-            <p id="area"></p>
-    
-            <p>Population: </p>
-            <p id="population"></p>
-    
-            <p>Currencies: </p>
-            <p id="currencies"></p>
-    
-            <p>Google Maps: </p>
-            <a id="google-maps-link"></a>
+            
+            <div class="text-box big-name">
+                <p>Official Name: </p>
+                <span id="official-name"></span>
+            </div>
+            <hr>
+            <div class="text-box">
+                <div class="text-box">
+                    <p>Region: </p>
+                    <p id="region"></p>
+                </div>
+                <div class="text-box">
+                    <p>Subregion: </p>
+                    <p id="subregion"></p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-box">
+                <p>Languages Spoken: </p>
+                <p id="languages"></p>
+            </div>
+            <hr>
+            <div class="text-box">
+                <p>Country Area: </p>
+                <p id="area"></p>
+            </div>
+            <hr>
+            <div class="text-box">
+                <p>Population: </p>
+                <p id="population"></p>
+            </div>
+            <hr>
+            <div class="text-box">
+                <p>Currencies: </p>
+                <p id="currencies"></p>
+            </div>
+            <hr>
+            <div class="text-box">
+                <p>Google Maps: </p>
+            </div>
+            <div class="text-box">
+                <a id="google-maps-link"></a>
+            </div>
+            <hr>
         </div>
     </div>
     <div id="nav-bar">
         <div id="search-box">
                 <input type="text" name="search" id="search-input" placeholder="Search...">
-                <input type="button" id="submit" value="&#x1F50E;&#xFE0E;">
-                <input type="button" id="restart" value="&#8635">
+                <button id="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                </button>
+                <button id="restart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                      </svg>
+                </button>
         </div>
     </div>
     <div id="countries-box">

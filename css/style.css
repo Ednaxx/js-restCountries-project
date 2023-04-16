@@ -18,9 +18,7 @@
 }
 
 #pop-up-frame {
-  background-color: #d0effc;
-  height: 70vh;
-  width: 50vw;
+  background-color: #00b9ff;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -30,6 +28,18 @@
 #pop-up-frame img {
   width: 80%;
   border-radius: 20px;
+}
+#pop-up-frame .text-box {
+  margin: 2px;
+  color: white;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  font-size: 1.4rem;
+  width: 80%;
+}
+#pop-up-frame .big-name {
+  font-size: 2rem;
 }
 
 * {
@@ -57,13 +67,13 @@ body {
   width: auto;
   height: auto;
 }
-
-#submit {
-  width: 20px;
+#nav-bar button {
+  padding: 2px;
+  border-radius: 6px;
+  border: solid 1px black;
 }
-
-#restart {
-  width: 20px;
+#nav-bar button:hover {
+  scale: 1.1;
 }
 
 #countries-box {
@@ -103,6 +113,11 @@ body {
 }
 .country-card p {
   font-size: 1.4rem;
+}
+
+hr {
+  border: #d0effc solid 1px;
+  width: 80%;
 }
 
 /*# sourceMappingURL=style.css.map */
